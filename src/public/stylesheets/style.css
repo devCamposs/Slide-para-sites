@@ -1,0 +1,80 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vw;
+  background: rgba(29, 29, 29, 0.8);
+  padding: 0 35px;
+}
+/* Carousel */
+
+.wrapper{
+  max-width: 1200px;
+  position: relative;
+}
+
+.wrapper svg{
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.wrapper svg:first-child{
+  left: -23px;
+}
+
+.wrapper svg:last-child{
+  right: -23px;
+}
+
+.wrapper .carousel {
+  white-space: nowrap;
+  font-size: 0px;
+  cursor: pointer;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  /* possibilitou clicar e arrastar a imagem para o lado sem ter que clicar novamente para ela ficar parada*/
+}
+
+.carousel img{
+height: 340px;
+width: calc(100% / 3);
+object-fit: cover;
+margin-left: 14px;
+}
+.carousel.dragging img {
+  pointer-events: none ;
+}
+.carousel.dragging {
+  cursor: grab;
+  scroll-behavior: auto;
+}
+
+.carousel img:first-child{
+  margin-left: 0px;
+}
+
+@media screen and (max-width: 900px){
+  .carousel img{
+    width: calc(100% / 2);
+  }
+}
+
+@media screen and (max-width: 550px){
+  .carousel img{
+    width: 100%;
+  }
+}
